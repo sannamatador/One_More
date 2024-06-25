@@ -3,15 +3,16 @@
 # В цикле создайте 40 объектов класса Building и выведите их на экран командой print
 # Полученный код напишите в ответ к домашнему заданию
 
+
 class Building:
-    total_ = 20
+    total = 0
 
-    def __init__(self, total_):
-        total_ = 40
-        self.total_ = int(total_)
-        for i in range(0, self.total_):
-            # a = Building(i)
-            print("Объект Building ", i + 1)
+    def __init__(self):
+        Building.total += 1
 
 
-a = Building(5)
+for i in range(40):
+    building = Building()
+    print(building)
+
+print("Общее количество зданий:", Building.total)
