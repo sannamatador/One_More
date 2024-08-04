@@ -31,10 +31,10 @@ print(f'Время работы программы: {time_end - time_start}\n')
 time_start = datetime.now()
 
 
-thr_1 = Thread(target=write_words(10, 'example5.txt'))
-thr_2 = Thread(target=write_words(30, 'example6.txt'))
-thr_3 = Thread(target=write_words(200, 'example7.txt'))
-thr_4 = Thread(target=write_words(100, 'example8.txt'))
+thr_1 = Thread(target=write_words, args=(10, 'example5.txt'))
+thr_2 = Thread(target=write_words, args=(30, 'example6.txt'))
+thr_3 = Thread(target=write_words,args=(200, 'example7.txt'))
+thr_4 = Thread(target=write_words, args=(100, 'example8.txt'))
 
 thr_1.start()
 thr_2.start()
