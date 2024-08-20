@@ -80,4 +80,4 @@ cafe = Cafe(*tables)
 cafe.guest_arrival(*guests)
 # Обслуживание гостей
 cafe.discuss_guests()
-
+print("Все гости закончили есть и ушли")
