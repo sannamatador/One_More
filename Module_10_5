@@ -22,10 +22,16 @@ end_time = datetime.now()
 
 print(end_time - start_time)
 
-start_time1 = datetime.now()
-if "__name__" == "__main__":
+
+if __name__ == "__main__":
+    start_time1 = datetime.now()
     with multiprocessing.Pool(processes=4) as pool:
         res = pool.map(read_info, filenames)
+    
+    end_time1 = datetime.now()
+    
+    print(end_time1 - start_time1)
+d_info, filenames)
     
     end_time1 = datetime.now()
     
