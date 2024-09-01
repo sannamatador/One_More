@@ -31,7 +31,7 @@ if __name__ == "__main__":
     end_time1 = datetime.now()
     
     print(end_time1 - start_time1)
-d_info, filenames)
+
     
     end_time1 = datetime.now()
     
