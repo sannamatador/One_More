@@ -20,7 +20,6 @@ class RunnerTest(unittest.TestCase):
         p = rrr.Runner('Kopgush')
         for i in range(10):
             r.walk()
-        self.assertEqual(r.distance, 50)
-        for i in range(10):
             p.run()
+        self.assertEqual(r.distance, 50)
         self.assertEqual(p.distance, 100)
