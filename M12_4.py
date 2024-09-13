@@ -1,4 +1,5 @@
 import logging
+import unittest
 
 
 class Runner:
@@ -14,18 +15,10 @@ class Runner:
             raise ValueError(f'Скорость не может быть отрицательной, сейчас {speed}')
 
     def run(self):
-        try:
-            self.distance += self.speed * 2
-            logging.info('"test_run" выполнен успешно')
-        except TypeError as err:
-            logging.warning('Неверный тип данных для Runner')
+        self.distance += self.speed * 2
 
     def walk(self):
-        try:
-            self.distance += self.speed
-            logging.info('"test_walk" выполнен успешно')
-        except ValueError as err:
-            logging.warning('Неверная скорость для Runner')
+        self.distance += self.speed
 
     def __str__(self):
         return self.name
@@ -59,13 +52,24 @@ class Tournament:
         return finishers
 
 
-if __name__ == "__main__":
+class RunnerTest(unittest.TestCase):
+
+    def test_walk(self):
+        try:
+            r1 = Runner('Вася', -1)
+            logging.info('"test_walk" выполнен успешно')
+        except ValueError:
+            logging.warning("Неверная скорость для Runner", exc_info=True)
+
+    def test_run(self):
+        try:
+            r2 = Runner(5)
+            logging.info('"test_run" выполнен успешно')
+        except TypeError:
+            logging.warning("Неверный тип данных для объекта Runner", exc_info=True)
+
+
+# if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, filemode="w", encoding="utf-8", filename="runner_tests.log",
                         format='%(asctime)s | %(levelname)s | %(message)s')
 
-first = Runner('Вася', -5)
-second = Runner('10', 5)
-third = Runner('Арсен', 10)
-
-a = first.run()
-b = second.walk()
