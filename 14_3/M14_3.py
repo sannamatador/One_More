@@ -1,6 +1,6 @@
 from keyboards import *
 
-api = '7349996096:AAGf0i3533QEIM-WjIRa6bTjZ9GNWfzkFsE'
+api = ''
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
