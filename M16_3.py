@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Path
-from typing import Annotated, Dict
+from typing import Annotated
 
 app = FastAPI()
 
@@ -51,5 +51,4 @@ async def delete_user(user_id:Annotated[str, Path(min_length=1)]):
     users.pop(user_id)
     return f"User  {user_id} has been deleted"
 
-# Запуск приложения
-# uvicorn M16_3:app --reload
+
